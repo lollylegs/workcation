@@ -13,8 +13,12 @@ module.exports = {
           '900': '#134E4A'
         },
       },
+      padding: {
+        '5/6': '83.33333333%'
+      }
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [require('@tailwindcss/forms'),
+  ],
 }

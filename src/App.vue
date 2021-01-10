@@ -1,34 +1,17 @@
 <template>
 	<div id="app" class="min-h-scree bg-gray-200 antialias">
-		<header class=" flex justify-between items-center bg-gray-700 px-4 py-3">
-			<div>
-				<img class="h-10 w-auto" src="/img/logo.svg">
+		<SiteHeader/>
+		<SearchFilters/>
+		<main class="py-6">
+			<div class="px-4">
+				<h3 class="text-gray-900 text-xl">Los Angeles</h3>
+				<p class="text-gray-600">Live like the stars in these luxurious Southern Californian Estates.</p>
 			</div>
-			<div class="flex">
-				<button>
-				<img class="h-8 w-8" src="/img/menu-line.svg">
-			</button>
-			</div>
-		</header>
-		<section class="flex justify-between bg-gray-600 px-4 py-3">
-			<div class="relative">
-				<div class="absolute inset-y-0 left-0 flex items-center pl-3">
-					<img class="h-6 4-6" src="/img/search-line.svg">
-				</div>
-				<input class="bg-gray-800 focus:outline:none focus:bg-white focus:text-gray-900 text-white rounded-lg pl-10 pr-4 py-2" placeholder="Search by keywords">
-			</div>
-			<button class="inline-flex bg-gray-700 hover:bg-gray-500 focus:outline-none focus:shadow-outline rounded-lg shadow pl-3 pr-4">
-				<img class="h-8 w-8" src="/img/filter-3-fill.svg">
-				<span class=" pt-2 ml-2 text-gray-200 font-medium">Filters</span>
-			</button>
-		</section>	
-		<main class="px-4 py-6">
-			<h3 class="text-gray-900 text-xl">Los Angeles</h3>
-			<p class="text-gray-600">Live like the stars in these luxurious Southern Californian Estates.</p>
-			<div class="mt-6">
-				<div>
-					<div>
-						<img class="rounded-lg shadow-md h-64 w-full" src="/img/losAngeles.jpeg" alt="Los Angeles Modern House">
+			<div class="mt-6 px-2">
+				<div class="sm:flex sm:-ml-2 sm:overflow-x-auto sm:pb-8 sm:pr-2">
+					<div v-for="i in 4" :key="i" :class="{'mt-10': i > 1}" class="sm:mt-0 sm:max-w-xs sm:w-full sm:flex-shrink-0 sm:px-2">
+					<div class="relative pb-5/6">
+						<img class="absolute inset-0 h-full rounded-lg shadow-md object-cover" src="/img/losAngeles.jpeg" alt="Los Angeles Modern House">
 					</div>
 					<div class="relative px-4 -mt-16">
 						<div class="bg-white rounded-lg px-4 py-4 shadow-lg">
@@ -59,17 +42,22 @@
 						</div>
 					</div>
 				</div>
+				</div>
+				
 			</div>
 		</main>
 	</div>
 </template>
 
 <script>
+import SiteHeader from '@/components/SiteHeader'
+import SearchFilters from '@/components/SearchFilters'
 
 export default {
 	name: 'app',
 	components: {
-		
+		SiteHeader,
+		SearchFilters,
 	}
 }
 </script>
